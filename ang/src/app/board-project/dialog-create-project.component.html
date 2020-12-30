@@ -1,0 +1,45 @@
+<div style="max-width: 500px; max-height: 500px;">
+  <h2 mat-dialog-title>Створення проєкту</h2>
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <form
+        name="form" (ngSubmit)="f.form.valid && createProject()"
+        #f="ngForm"
+        novalidate>
+        <div class="form-group">
+          <label for="projectName">Назва проєкту</label>
+          <input
+            id="projectName"
+            type="text"
+            class="form-control"
+            name="projectName"
+            [(ngModel)]="form.projectName"
+            required
+            minlength="3"
+            maxlength="40"
+            #projectName="ngModel"
+          />
+          <div class="alert-danger" *ngIf="f.submitted && projectName.invalid">
+            <div *ngIf="projectName.errors.required">Username is required</div>
+            <div *ngIf="projectName.errors.minlength">
+              Username must be at least 3 characters
+            </div>
+            <div *ngIf="projectName.errors.maxlength">
+              Username must be at most 20 characters
+            </div>
+          </div>
+          <div class="alert-danger" *ngIf="content">
+            <div>{{content}}</div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="pm-button-green" (click)="createProject()" [mat-dialog-close]="form">Створити</button>
+    <button class="pm-button-red" [mat-dialog-close]="form">Відміна</button>
+
+    <!--    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>-->
+  </mat-dialog-actions>
+</div>

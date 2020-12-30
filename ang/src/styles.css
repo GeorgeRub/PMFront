@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+.left-menu {
+  color: white;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pm-button {
+  color: white;
+  border-radius: 3px;
+  border: solid white 0;
+}
+
+.pm-button-green {
+  color: green;
+  border-radius: 3px;
+  border: solid white 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.pm-button-red {
+  color: red;
+  border-radius: 3px;
+  border: solid white 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.userLogo {
+  border: solid 1px #e0dcff;
+  background-color: #e0dcff;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  margin-right: 1em;
+}
+
+.userLogoLetter{
+  color: #64647a;
+  font-weight: 510;
+  font-size: 1.3em;
+}
+
+.bg-pm{
+  background-color: rgba(9, 59, 198, 0.3);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

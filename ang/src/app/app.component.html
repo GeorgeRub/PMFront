@@ -1,0 +1,58 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-light bg-pm">
+
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Home </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+      </li>
+      <li class="nav-item" *ngIf="showModeratorBoard">
+        <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+      </li>
+      <li class="nav-item">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+      <li class="nav-item">
+        <a href="/project" class="nav-link" *ngIf="isLoggedIn" routerLink="project">Проекты</a>
+      </li>
+    </ul>
+    <a href="#" class="navbar-brand text-md-center">George's PM</a>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item left-menu">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item left-menu">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/profile" class="nav-link userLogo" routerLink="profile">
+          <center><span class="userLogoLetter">{{ firstLetterOfUserName() }}</span></center>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12" style="height: 50px;">
+        navigation
+      </div>
+      <div class="col-12" style="height: calc(100vh - 52px - 60px - 50px);">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="col-12 bg-pm" style="height: 60px;">
+
+      </div>
+    </div>
+
+  </div>
+</div>

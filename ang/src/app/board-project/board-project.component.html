@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <div class="card" style="height: 200px;">
+        <button class="pm-button-green" (click)="openDialog()">Додати Проєкт
+        <hr>
+          <svg class="bi" width="32" height="32" fill="currentColor">
+            <use xlink:href="bootstrap-icons.svg#shop"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+      <div *ngFor="let project of projects" class="col-2" >
+        <div class="card" style="height: 200px;" (click)="goToProject(project.projectId)">
+          <h4>{{project.projectName}}</h4>
+          <hr>
+          <h4 class="align-bottom">{{project.created | date:'dd:MM:yyyy'}}</h4>
+        </div>
+      </div>
+  </div>
+</div>

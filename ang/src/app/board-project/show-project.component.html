@@ -1,0 +1,9 @@
+<div class="container-fluid" *ngIf="project">
+  <div>{{project.projectName}}</div>
+  <div class="row">
+    <div class="col-3" *ngFor="let task of project.taskList" >
+      <span [(ngModel)]="task.taskName"></span>
+      <span [(ngModel)]="task.taskId"></span>
+    </div>
+  </div>
+</div>
