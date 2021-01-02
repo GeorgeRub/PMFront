@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+/ang/ang.iml
+/ang/.editorconfig
+/ang/.browserslistrc
